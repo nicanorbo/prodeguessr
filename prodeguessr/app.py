@@ -5,6 +5,16 @@ from ml_engine import predecir_marcador
 
 st.set_page_config(page_title="ProdeGuessr 2026", page_icon="🏆", layout="wide")
 
+# Función de banderas - DEBE IR AL PRINCIPIO
+def get_flag(pais):
+    mapa = {
+        "Argentina": "🇦🇷", "Canadá": "🇨🇦", "Francia": "🇫🇷", "Colombia": "🇨🇴",
+        "Brasil": "🇧🇷", "Escocia": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "México": "🇲🇽", "Ecuador": "🇪🇨",
+        "Alemania": "🇩🇪", "Japón": "🇯🇵", "España": "🇪🇸", "Costa Rica": "🇨🇷",
+        "Inglaterra": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Irán": "🇮🇷", "Estados Unidos": "🇺🇸", "Uruguay": "🇺🇾"
+    }
+    return mapa.get(pais, "🏳️")
+
 # CSS mejorado - Estética profesional de predicciones deportivas
 st.markdown("""
     <style>
@@ -255,12 +265,3 @@ else:
                 """, unsafe_allow_html=True)
     
     st.markdown('</div>', unsafe_allow_html=True)
-
-def get_flag(pais):
-    mapa = {
-        "Argentina": "🇦🇷", "Canadá": "🇨🇦", "Francia": "🇫🇷", "Colombia": "🇨🇴",
-        "Brasil": "🇧🇷", "Escocia": "🏴󠁧󠁢󠁳󠁣󠁴󠁿", "México": "🇲🇽", "Ecuador": "🇪🇨",
-        "Alemania": "🇩🇪", "Japón": "🇯🇵", "España": "🇪🇸", "Costa Rica": "🇨🇷",
-        "Inglaterra": "🏴󠁧󠁢󠁥󠁮󠁧󠁿", "Irán": "🇮🇷", "Estados Unidos": "🇺🇸", "Uruguay": "🇺🇾"
-    }
-    return mapa.get(pais, "🏳️")
